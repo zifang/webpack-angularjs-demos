@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提示信息demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link href="statics/css/sui.min.css" rel="stylesheet">
+	<link href="statics/css/work.css" rel="stylesheet">
+	<script type="text/javascript" src="statics/js/jquery.min.js"></script>
+	<script type="text/javascript" src="statics/js/sui.min.js"></script>
+</head>
+<body>
+	
+	<a href="javascript:;" id="success" class="sui-btn">提示成功</a>
+	<a href="javascript:;" id="error" class="sui-btn">提示失败</a>
+	<a href="javascript:;" id="warning" class="sui-btn">提示警告</a>
+
+	<!-- 成功 -->
+	<div id="successModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal alert-modal alertInfoBox hide">
+		<a href="javascript:void(0);" data-dismiss="modal"  class="close">&times;</a>
+		<p class="info text-center success">操作成功！</p>
+	</div>
+	<!-- 失败 -->
+	<div id="errorModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal alert-modal alertInfoBox hide">
+		<a href="javascript:void(0);" data-dismiss="modal"  class="close">&times;</a>
+		<p class="info text-center error">操作失败</p>
+	</div>
+	<!-- 警告 -->
+	<div id="warningModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal alert-modal alertInfoBox hide">
+		<a href="javascript:void(0);" data-dismiss="modal" class="close">&times;</a>
+		<p class="info text-center warning">密码需在2-14为之间</p>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#success").on("click",function(){
+				$("#successModal").modal("show");
+			});
+
+			$("#error").on("click",function(){
+				$("#errorModal").modal("show");
+			});
+
+			$("#warning").on("click",function(){
+				$("#warningModal").modal("show");
+			});
+
+		});
+	</script>
+
+</body>
+</html>

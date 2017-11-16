@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+	<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.css" rel="stylesheet">
+	<link href="statics/css/work.css" rel="stylesheet">
+	<title>微信支付</title>
+</head>
+<body>
+	<div class="head">
+		<div class="top clearfix">
+			<div class="w1200 clearfix">
+				<span class="">欢迎使用，如有任何疑问请联系客服！</span>
+				<div class="admin-fun sui-dropdown pull-right">
+					<a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
+						<i class="icon icon5 mr10"></i>海底捞一店<i class="icon icon6 ml10"></i>
+					</a>
+					<ul role="menu" class="sui-dropdown-menu">
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon7"></i>修改资料</a></li>
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon8"></i>修改密码</a></li>
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon9"></i>退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="w1200 clearfix">
+				<a href="" class="pull-left logo"></a>
+				<ul class="menu-bar pull-left">
+					<li class="menu-bar-li"><a href="#">我的收藏</a></li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon1"></i>门店管理</a>
+						<ul class="top-bar-hide">
+							<li><a href="">门店列表</a></li>
+							<li><a href="">员工管理</a></li>
+							<li><a href="">餐台分类</a></li>
+							<li><a href="">餐台列表</a></li>
+							<li><a href="">订单管理</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon2"></i>菜品管理</a>
+						<ul class="top-bar-hide top-bar-hide2">
+							<li><a href="">菜品分类</a></li>
+							<li><a href="">菜品列表</a></li>
+							<li><a href="">菜单列表</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon3"></i>数据分析</a>
+						<ul class="top-bar-hide top-bar-hide3">
+							<li><a href="">门店列表</a></li>
+							<li><a href="">员工管理</a></li>
+							<li><a href="">餐台分类</a></li>
+							<li><a href="">餐台列表</a></li>
+							<li><a href="">订单管理</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon4"></i>系统配置</a>
+						<ul class="top-bar-hide top-bar-hide4">
+							<li><a href="">支付管理</a></li>
+							<li><a href="">公众号管理</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<dl class="select" style="float:right">
+					<dt class="">所有门店</dt>
+					<dd style="display: none;">
+						<ul>
+							<li><a href="#">12131</a></li>
+							<li><a href="#">下拉2</a></li>
+							<li><a href="#">下拉3</a></li>
+							<li><a href="#">下拉4</a></li>
+							<li><a href="#">下拉5</a></li>
+							<li><a href="#">下拉6</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+   <div class="main">
+		<h3 class="menu-title">微信支付</h3>
+		<div class="bread"><a href="">首页</a><span>></span><a href="">系统配置</a><span>></span><a href="">公众号管理</a><span>></span><a href="">微信支付</a></div>
+		<div class="content">
+			<div class="alert-info">
+				<p>使用说明：</p> 
+				<p>1. 需要有一个微信公众号，并且公众号的类型是认证的服务号；</p>
+				<p>2. 只有认证的服务号才能申请微支付；</p>
+				<p>3. 还没有账号？点击进入微信平台申请；</p>
+				<p>4.微信支付常见问题，请点此帮助。</p>
+			</div>
+			<form class="sui-form form-horizontal sui-validate font14 mt30">
+		      <div class="control-group">
+		        <label class="control-label">APPID：</label>
+		        <div class="controls">
+				  <input class="input-xlarge" name="name"  placeholder="请填写APPID" type="text"/>
+		        </div>
+		      </div>
+			  <div class="control-group">
+		        <label class="control-label">APPSECRET：</label>
+		        <div class="controls">
+				  <input class="input-xlarge" name="name" placeholder="APPSECRET" type="text"/>
+		        </div>
+		      </div>
+			  <div class="control-group">
+		        <label class="control-label">KEY：</label>
+		        <div class="controls">
+		        	<input type="text" name="" placeholder="KEY" class="input-xlarge">
+		        </div>
+		      </div>
+			  <div class="control-group">
+		        <label class="control-label">MCHID：</label>
+		        <div class="controls">
+		        	<input class="input-xlarge" name="" placeholder="MCHID" type="text"/>
+		        </div>
+		      </div>
+		      <div class="form-actions tac">
+		          <button type="submit" class="sui-btn w130 btn-green">确定</button>
+		      </div>
+		    </form>
+		</div>
+	</div>
+	<script  type="text/javascript" src="statics/js/require.js" data-main="statics/js/main"></script>
+</body>
+</html>

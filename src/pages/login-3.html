@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>登记</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.css" rel="stylesheet">
+<link href="statics/css/work.css" rel="stylesheet">
+<style>
+	body,html{width:100%;height:100%;overflow:hidden;background:#3d4354 url(statics/images/loginbg.png) no-repeat center bottom;}
+</style>
+</head>
+<body class="body1">
+	<div class="loginbg">
+		<div class="login">
+			<form class="login-con">
+				<h3>登记</h3>
+				<span class="warning">您输入的帐号或者密码不正确，请重新输入。</span>
+				<ul class="login-ul">
+					<label><li><i class="icon3"></i><input type="text" class="people" value="请输入联系人" onblur="if(this.value==''){this.value='请输入联系人'}" onfocus="if(this.value=='请输入联系人'){this.value=''}"/></li></label>
+					<label><li><i class="icon1"></i><input type="text" class="number" value="请输入你的手机号" onblur="if(this.value==''){this.value='请输入你的手机号'}" onfocus="if(this.value=='请输入你的手机号'){this.value=''}"/></li></label>
+					<li><i class="icon4"></i><input type="text" class="code" value="请输入验证码" onblur="if(this.value==''){this.value='请输入验证码'}" onfocus="if(this.value=='请输入验证码'){this.value=''}"/><a href="javascript:void(0)" class="postcode">发送验证码</a></li>
+					<li><a href="javascript:void(0);" class="sui-btn btn-green">登陆</a></li>
+				</ul>
+				
+			</form>
+		</div>
+	</div>
+	
+<!-- <script  type="text/javascript" src="statics/js/require.js" data-main="statics/js/main"></script> -->
+<!-- <script  type="text/javascript" src="statics/js/require.js" data-main="statics/js/main"></script> -->
+<script type="text/javascript" src="statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="statics/js/customInput.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('input').customInput();
+		$('.login-ul input').focus(function(){
+		$(this).addClass('cur');
+	});
+	$('.login-ul input').blur(function(){
+		$(this).removeClass('cur');
+	})
+	
+	})
+</script>
+</body>
+</html>

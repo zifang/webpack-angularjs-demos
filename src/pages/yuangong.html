@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>员工管理</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<link href="statics/css/sui.min.css" rel="stylesheet">
+<link href="statics/css/work.css" rel="stylesheet">
+<link href="statics/css/work.css" rel="stylesheet">
+</head>
+<body>
+	<div class="head">
+		<div class="top clearfix">
+			<div class="w1200 clearfix">
+				<span class="">欢迎使用，如有任何疑问请联系客服！</span>
+				<div class="admin-fun sui-dropdown pull-right">
+					<a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
+						<i class="icon icon5 mr10"></i>海底捞一店<i class="icon icon6 ml10"></i>
+					</a>
+					<ul role="menu" class="sui-dropdown-menu">
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon7"></i>修改资料</a></li>
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon8"></i>修改密码</a></li>
+						<li><a role="menuitem" tabindex="-1" href="#"><i class="icon icon9"></i>退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="w1200 clearfix">
+				<a href="" class="pull-left logo"></a>
+				<ul class="menu-bar pull-left">
+					<li class="menu-bar-li"><a href="#">我的收藏</a></li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon1"></i>门店管理</a>
+						<ul class="top-bar-hide">
+							<li><a href="">门店列表</a></li>
+							<li><a href="">员工管理</a></li>
+							<li><a href="">餐台分类</a></li>
+							<li><a href="">餐台列表</a></li>
+							<li><a href="">订单管理</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon2"></i>菜品管理</a>
+						<ul class="top-bar-hide top-bar-hide2">
+							<li><a href="">菜品分类</a></li>
+							<li><a href="">菜品列表</a></li>
+							<li><a href="">菜单列表</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon3"></i>数据分析</a>
+						<ul class="top-bar-hide top-bar-hide3">
+							<li><a href="">门店列表</a></li>
+							<li><a href="">员工管理</a></li>
+							<li><a href="">餐台分类</a></li>
+							<li><a href="">餐台列表</a></li>
+							<li><a href="">订单管理</a></li>
+						</ul>
+					</li>
+					<li class="menu-bar-li"><a href="#"><i class="icon icon4"></i>系统配置</a>
+						<ul class="top-bar-hide top-bar-hide4">
+							<li><a href="">支付管理</a></li>
+							<li><a href="">公众号管理</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<dl class="select" style="float:right">
+					<dt class="">所有门店</dt>
+					<dd style="display: none;">
+						<ul>
+							<li><a href="#">12131</a></li>
+							<li><a href="#">下拉2</a></li>
+							<li><a href="#">下拉3</a></li>
+							<li><a href="#">下拉4</a></li>
+							<li><a href="#">下拉5</a></li>
+							<li><a href="#">下拉6</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+   <div class="main">
+			<h3 class="menu-title">员工管理</h3>
+			<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">员工管理</a></div>
+			<div class="pl30 pt30 pb25 border-b">
+				<a href="mengdian2-1.html" class="sui-btn w130 btn-green">添加员工</a>
+			</div>
+			<div class="content">
+					<form class="sui-form form-horizontal sui-validate font14">
+						<div class="control-group">
+							<div class="controls mr30">
+								<span class="sui-dropdown sui-dropdown2 dropdown-bordered select"><span class="dropdown-inner"><a role="button" data-toggle="dropdown" href="#" class="dropdown-toggle">
+				                <input value="bj" name="city" data-rules="required" type="hidden"><i class="caret"></i><span>所有门店</span></a>
+				                <ul id="menu4" role="menu" aria-labelledby="drop4" class="sui-dropdown-menu">
+				                    <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="bj">所有门店</a></li>
+				                     <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="sb">门店1</a></li>
+				                     <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="sb">门店2</a></li>
+				                 </ul></span></span>
+								
+							</div>
+							<label class="control-label ml30">员工姓名：</label>
+							<div class="controls mr40">
+								<input class="input-large" type="text" placeholder="请输入要搜索的员工姓名">
+							</div>
+							<label class="control-label ml30">员工工号：</label>
+							<div class="controls mr40">
+								<input class="input-large" type="text" placeholder="请输入要搜索的员工工号">
+							</div>
+							<a href="javascript:void(0);" class="sui-btn w100 btn-green ml40">查询</a>
+						</div>
+				</form>
+				<table class="sui-table table-zebra tb">
+					<tr>
+						<th width="15%">员工工号</th>
+						<th width="15%">员工姓名</th>
+						<th width="15%">手机号码</th>
+						<th width="20%">所属门店</th>
+						<th width="15%">员工角色</th>
+						<th width="20%">操作</th>
+					</tr>
+					<tr>
+						<td>00001</td>
+						<td>张三</td>
+						<td>15921750438</td>
+						<td>东方既白(东方既白高科店)</td>
+						<td>店长</td>
+						<td>
+							<a href="#" class="btn-edit">编辑</a>
+							<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-keyboard="false" class="btn-delete">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>00001</td>
+						<td>张三</td>
+						<td>15921750438</td>
+						<td>东方既白(东方既白高科店)</td>
+						<td>店长</td>
+						<td>
+							<a href="#" class="btn-edit">编辑</a>
+							<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-keyboard="false" class="btn-delete">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>00001</td>
+						<td>张三</td>
+						<td>15921750438</td>
+						<td>东方既白(东方既白高科店)</td>
+						<td>店长</td>
+						<td>
+							<a href="#" class="btn-edit">编辑</a>
+							<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-keyboard="false" class="btn-delete">删除</a>
+						</td>
+					</tr>
+				</table>
+				<div class="sui-pagination pagination-large">
+					<ul>
+						<li class="prev disabled"><a href="#">«上一页</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li class="dotted"><span>...</span></li>
+						<li class="next"><a href="#">下一页»</a></li>
+					</ul>
+					<div><span>共10页&nbsp;</span><span>到<input class="page-num" type="text"><button class="page-confirm" onclick="alert(1)">确定</button>页</span></div>
+				</div>
+			</div>
+		</div>
+	<!--确定删除-->
+	<div id="myModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal hide">
+	    <div class="delete-box tac">
+			<p class="col666">确定删除该门店吗？</p>
+			<a href="javascript:void(0);" data-ok="modal"  class="sui-btn w100 btn-green mr15">确定</a>
+			<a href="javascript:void(0);" data-dismiss="modal"  class="sui-btn w100 btn-gray">取消</a>
+		</div>
+	</div>
+<script  type="text/javascript" src="statics/js/require.js" data-main="statics/js/main"></script>
+</body>
+</html>
