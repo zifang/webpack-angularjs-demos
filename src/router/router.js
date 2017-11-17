@@ -6,10 +6,36 @@ const router = function($urlRouterProvider, $stateProvider, $locationProvider){
     url: '/',
     template: require('../pages/login.html')
   })
-  // state('addVersion',{
-  // 	url: '/addVersion',
-  // 	template: require('../pages/addVersion/addVersion.html')
-  // });
+  .state('main',{
+  	url: '/main',
+    views: {
+      "": {
+        template: require("../pages/main.html")
+      },
+      'header@main': {
+        template: require('../pages/header/header.html')
+      },
+      "content@main": {
+        template: require('../pages/favorate/favorate.html')
+      }
+    },
+  })
+  .state('main.mendian',{
+    url: '/mendian',
+    views: {
+      "content@main": {
+        template: require('../pages/mendian/main.html')
+      }
+    }
+  })
+  .state('main.caipin',{
+    url:'/caipin',
+    views: {
+      "content@main": {
+        template: require('../pages/caipin/main.html')
+      }
+    }
+  })
 }
 
 router.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider'];

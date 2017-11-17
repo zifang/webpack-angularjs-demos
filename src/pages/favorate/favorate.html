@@ -1,0 +1,32 @@
+<div ng-controller="favorateCtrl as ctrl">
+	<h3 class="menu-title">我的收藏</h3>
+		<div class="content">
+			<ul class="list-card clearfix">
+				<li ng-repeat="(index,item) in ctrl.allMenuList">
+					<span ng-repeat="(subindex, subitem) in item.list" ng-if="subitem.checked" ng-mouseenter="subitem.show = !subitem.show" ng-mouseleave="subitem.show = !subitem.show" >
+						<a href="javascript:;" class="card{{index +1 }}">{{subitem.name}}</a>
+						<span class="x-icon" href="javascript:;" ng-click="ctrl.delete(index,subindex)" ng-show="subitem.show"></span>
+					</span>
+				</li>
+				<li><a href="javascript:;" ng-click="ctrl.showBox = !ctrl.showBox" class="addfun js-layer"></a></li>
+			</ul>
+		</div>
+		<div class="js-pop-layers mycollect" ng-show="ctrl.showBox">
+			<h3 class="menu-title">添加我的收藏</h3>
+			<div class="menu-bar-wrapper">
+				<ul class="menu-bar clearfix">
+					<li class="menu-bar-li" ng-repeat="(index,item) in ctrl.allMenuList">
+						<a href="#">{{item.title}}</a>
+						<ul class="top-bar-hide top-bar-hide{{index+1}}">
+							<li ng-repeat="subitem in item.list" ng-click="ctrl.checked(subitem)"><button ng-disabled="subitem.status==1" ng-class="{active:subitem.checked}">{{subitem.name}}</button></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<p class="tac">
+				<a href="javascript:void(0);" class="sui-btn btn-green w130 mr45 js-cancle" ng-click="ctrl.showBox = !ctrl.showBox">添加</a>
+			  <a href="javascript:void(0);" class="sui-btn btn-gray w130 mr45 js-cancle" ng-click="ctrl.showBox = !ctrl.showBox">取消</a>
+			</p>
+		</div>
+	<div class="cover" ng-show="ctrl.showBox"></div>
+</div>

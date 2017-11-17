@@ -1,9 +1,13 @@
 'use strict';
 export default class loginCtrl {
-	constructor($scope, $http){
-		Object.assign(this, {$http, $scope});
-		
+	constructor($state, $scope, $http){
+		Object.assign(this, {$state, $http, $scope})
+	}
+	save(){
+		if(this.$scope.loginForm.$valid){
+			this.$state.go('main')
+		}
 	}
 }
 
-loginCtrl.$inject=['$scope','$http']
+loginCtrl.$inject=['$state', '$scope', '$http']

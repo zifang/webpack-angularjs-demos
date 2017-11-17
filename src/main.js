@@ -4,7 +4,7 @@ import router from './router/router.js';
 import controller from './js/controllers/controller.js';
 
 import './style/iconfont.less';
-import './style/main.less';
+import './style/work.less';
 
 const injectArr = [uiRouter, controller]
 const app = angular.module('app', injectArr)
