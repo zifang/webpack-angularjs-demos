@@ -44,7 +44,7 @@ class orderTypeFilter { // 订单类型
 }
 
 class mendianTypeFilter {
-  status status(input) {
+  static status(input) {
     switch (input) {
       case '1':
         return '小吃快餐';
