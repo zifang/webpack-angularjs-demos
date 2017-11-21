@@ -25,9 +25,9 @@
 				<td>{{item.phone}}</td>
 				<td class="btn-link-group">
 					<a href="#" class="btn-edit">旗下门店</a>
-					<a href="#" class="btn-edit">编辑</a>
-					<a href="javascript:void(0)" ng-click="ctrl.delete(item.id)" class="btn-delete">删除</a>
-					<a href="pinpai-detail.html" class="btn-detail">详情</a>
+					<a href="javascript:;" ng-click="ctrl.edit(index)" class="btn-edit">编辑</a>
+					<a href="javascript:void(0)" ng-click="ctrl.delete(index)" class="btn-delete">删除</a>
+					<a href="javascript:;" ng-click="ctrl.detail(index)" class="btn-detail">详情</a>
 				</td>
 			</tr>
 		</table>
@@ -48,11 +48,11 @@
 </div>
 
 <!--确定删除-->
-<script type="text/ng-template" id="templateId">
-	<div id="myModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal">
+<script type="text/ng-template" id="delPinpaiTempId">
+	<div class="dialog">
 	    <div class="delete-box tac">
 			<p class="col666">确定删除该门店吗？</p>
-			<a href="javascript:void(0);" data-ok="modal" class="sui-btn w100 btn-green mr15">确定</a>
+			<a href="javascript:void(0);" ng-click="confirm()" class="sui-btn w100 btn-green mr15">确定</a>
 			<a href="javascript:void(0);" ng-click="cancel()" class="sui-btn w100 btn-gray">取消</a>
 		</div>
 	</div>

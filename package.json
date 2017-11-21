@@ -25,6 +25,7 @@
     "copy-webpack-plugin": "^4.2.0",
     "ionic": "^3.15.0",
     "iscroll": "^5.2.0",
+    "oclazyload": "^1.1.0",
     "webpack": "^3.8.1"
   },
   "dependencies": {

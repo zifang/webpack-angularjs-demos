@@ -4,7 +4,7 @@
 			<ul class="list-card clearfix">
 				<li ng-repeat="(index,item) in ctrl.allMenuList">
 					<span ng-repeat="(subindex, subitem) in item.list" ng-if="subitem.checked" ng-mouseenter="subitem.show = !subitem.show" ng-mouseleave="subitem.show = !subitem.show" >
-						<a href="javascript:;" class="card{{index +1 }}">{{subitem.name}}</a>
+						<a ui-sref="{{subitem.url}}" class="card{{index +1 }}">{{subitem.name}}</a>
 						<span class="x-icon" href="javascript:;" ng-click="ctrl.delete(index,subindex)" ng-show="subitem.show"></span>
 					</span>
 				</li>
