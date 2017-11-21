@@ -28,6 +28,22 @@ const router = function($urlRouterProvider, $stateProvider, $locationProvider){
       }
     }
   })
+  .state('main.mendian.pinpai',{
+    url: '/pinpai',
+    views: {
+      "content@main": {
+        template: require('../pages/mendian/pinpai/pinpai.html')
+      }
+    }
+  })
+  .state('main.mendian.pinpai.add',{
+    url: '/pinpaiAdd',
+    views: {
+      "content@main": {
+        template: require('../pages/mendian/pinpai/pinpaiAdd.html')
+      }
+    }
+  })
   .state('main.caipin',{
     url:'/caipin',
     views: {
