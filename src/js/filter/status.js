@@ -43,7 +43,7 @@ class orderTypeFilter { // 订单类型
   }
 }
 
-class mendianType {
+class mendianTypeFilter {
   status status(input) {
     switch (input) {
       case '1':
@@ -56,4 +56,4 @@ class mendianType {
   }
 }
 
-export {statusFilter, payStatusFilter, orderTypeFilter, mendianType};
+export {statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter};
