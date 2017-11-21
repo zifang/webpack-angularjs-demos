@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import router from './router/router.js';
 import mendianRouter from './pages/mendian/router/router.js';
 import controller from './js/controllers/controller.js';
-import { statusFilter, payStatusFilter, orderTypeFilter } from './js/filter/status.js';
+import { statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter } from './js/filter/status.js';
 
 import 'ng-file-upload';
 import 'ng-dialog';
@@ -29,6 +29,9 @@ const app = angular.module('app', injectArr)
 })
 .filter('orderTypeFilter', () => {
 	return orderTypeFilter.status;
+})
+.filter('mendianTypeFilter', () => {
+	return mendianTypeFilter.status;
 })
 // .directive('itemDish',[function(){
 // 	return {

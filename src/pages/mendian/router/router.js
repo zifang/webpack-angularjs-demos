@@ -27,7 +27,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
         ($q, $ocLazyLoad) => {
           return $q((resolve) => {
             require.ensure([], () => {
-              let module = require('../controller/mendian.js');
+              let module = require('../controller/index.js');
               $ocLazyLoad.load({
                 name: module.default
               });
@@ -38,7 +38,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
-  .state('main.mendian.pinpai',{
+  .state('main.pinpai',{
     url: '/pinpai',
     views: {
       "content@main": {
@@ -63,7 +63,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
-  .state('main.mendian.pinpai.add',{
+  .state('main.pinpai.add',{
     url: '/pinpaiAdd',
     views: {
       "content@main": {
@@ -88,7 +88,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
-  .state('main.mendian.pinpai.edit',{
+  .state('main.pinpai.edit',{
     url: '/pinpaiEdit',
     views: {
       "content@main": {
@@ -113,7 +113,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   }) 
-  .state('main.mendian.pinpai.detail',{
+  .state('main.pinpai.detail',{
     url: '/pinpaiDetail',
     views: {
       "content@main": {
@@ -138,7 +138,7 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
-  .state('main.mendian.dingdan',{
+  .state('main.dingdan',{
     url: '/dingdan',
     views: {
       "content@main": {
@@ -153,6 +153,31 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
           return $q((resolve) => {
             require.ensure([], () => {
               let module = require('../controller/dingdan.js');
+              $ocLazyLoad.load({
+                name: module.default
+              });
+              resolve();
+            });
+          });
+        }
+      ]
+    }
+  })
+  .state('main.mendian.home',{
+    url: '/mendianHome',
+    views: {
+      "content@main": {
+        template: require('../views/mendian/list.html')
+      }
+    },
+    resolve: {
+      loadController: [
+        '$q',
+        '$ocLazyLoad',
+        ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('../controller/mendian.js');
               $ocLazyLoad.load({
                 name: module.default
               });

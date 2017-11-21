@@ -43,4 +43,17 @@ class orderTypeFilter { // 订单类型
   }
 }
 
-export {statusFilter, payStatusFilter, orderTypeFilter};
+class mendianType {
+  status status(input) {
+    switch (input) {
+      case '1':
+        return '小吃快餐';
+      case '2':
+        return '正餐';
+      default:
+        return '暂无类型';
+    }
+  }
+}
+
+export {statusFilter, payStatusFilter, orderTypeFilter, mendianType};

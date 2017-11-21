@@ -27,7 +27,7 @@ class pinpaiEditCtrl {
 		let tableList = JSON.parse(sessionStorage.getItem('tableList'));
 		tableList.splice(_index, 1, obj);
 		sessionStorage.tableList = JSON.stringify(tableList);
-		this.$state.go("main.mendian.pinpai");
+		this.$state.go("main.pinpai");
 	}
 }
 

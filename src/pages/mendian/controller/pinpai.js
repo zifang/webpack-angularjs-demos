@@ -42,7 +42,7 @@ class pinpaiCtrl {
 		}
 		this.tableList.push(obj);
 		sessionStorage.tableList = JSON.stringify(this.tableList);
-		this.$state.go("main.mendian.pinpai");
+		this.$state.go("main.pinpai");
 	}
 
 	delete(index){
@@ -68,12 +68,12 @@ class pinpaiCtrl {
 	edit(index) {
 		sessionStorage.pinpaiDetail = JSON.stringify(this.tableList[index]);
 		sessionStorage.tableIndex = index;
-		this.$state.go("main.mendian.pinpai.edit");
+		this.$state.go("main.pinpai.edit");
 	}
 
 	detail(index){
 		sessionStorage.pinpaiDetail = JSON.stringify(this.tableList[index]);
-		this.$state.go("main.mendian.pinpai.detail");
+		this.$state.go("main.pinpai.detail");
 	}
 }
 

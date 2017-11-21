@@ -2,11 +2,12 @@
 class mendianCtrl {
 	constructor($state, $http){
 		Object.assign(this, {$state, $http})
-		this.allMenuList = [
-			{id:11, name: '品牌列表', url: 'main.mendian.pinpai'},
-			{id:12, name: '门店列表', url: 'main.mendian.pinpai'},
-			{id:13, name: '员工列表', url: 'main.mendian.pinpai'},
-			{id:14, name: '订单管理', url: 'main.mendian.dingdan'}
+		this.tableList = [
+			{id:11, name: '东方极白（东方既白高科店）', phone: '021-12111111', type: '1', status: '1'},
+			{id:12, name: '东方极白', phone: '021-123333111', type: '2', status: '2'},
+			{id:13, name: '东方极白', phone: '021-121333211', type: '3', status: '1'},
+			{id:14, name: '东方既白高科店', phone: '021-32331111', type: '1', status: '2'},
+			{id:15, name: '东方高科店', phone: '021-1213232111', type: '1', status: '1'},
 		]
 	}
 }
