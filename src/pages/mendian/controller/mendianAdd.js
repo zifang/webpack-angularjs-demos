@@ -45,6 +45,43 @@ class mendianAddCtrl {
 			desctiption: '',
 			status: true
 		}
+
+		//上传文件
+	  uploadFiles(file, errFiles) {
+	    const _that = this;
+	    if (file) {
+	      // let isApk = file.name.endsWith('.apk');
+	      // if (isApk) {
+        // var toastInstance = _that.toaster.pop({
+        //   type: 'info',
+        //   body: '正在上传,请稍等...',
+        //   timeout: 1000000,
+        //   tapToDismiss: false
+        // });
+        let url = '/api/apk/upload';
+        _that.Upload.upload({
+          url: url,
+          data: {
+            file: file
+          }
+        }).then((response) => {
+          _that.params.fileId = response.data.data.id;
+          _that.toaster.clear(toastInstance);
+        });
+	      // } else {
+	      //   _that.toaster.pop({
+	      //     type: 'warning',
+	      //     body: '请选择.apk文件!',
+	      //     timeout: 1000,
+	      //     tapToDismiss: false
+	      //   });
+	      // }
+	    }
+	  }
+
+		let map= new AMap.Map(document.getElementById('mapContainer'), {
+	    resizeEnable: true
+		});
 	}
 }
 
