@@ -56,4 +56,16 @@ class mendianTypeFilter {
   }
 }
 
-export {statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter};
+class mendianStatusFilter {
+  static status(input) {
+    switch (input) {
+      case '1':
+        return '正常营业';
+      case '2':
+        return '暂停营业';
+      default:
+        return '暂无类型';
+    }
+  }
+}
+export {statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter, mendianStatusFilter};

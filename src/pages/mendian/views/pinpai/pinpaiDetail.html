@@ -2,45 +2,48 @@
 	<h3 class="menu-title">品牌详情</h3>
 	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">品牌列表</a><span>></span><a href="">品牌详情</a></div>
    	<div class="content">
-	    <form class="sui-form form-horizontal font14">
-	      <div class="control-group">
-	        <label class="control-label"><span class="colorg">＊</span>品牌中文名：</label>
-	        <div class="controls">
-			  		<input class="input-xlarge" name="name" ng-model="ctrl.formData.name" readonly type="text"/>
-	        </div>
+	    <form class="form-horizontal" name="pinpaiForm">
+	      <div class="form-group" ng-class="{'valid-success': pinpaiForm.name.$valid, 'valid-error': pinpaiForm.name.$invalid && pinpaiForm.name.$dirty}">
+	        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌中文名：</label>
+	        <div class="col-sm-5">
+		  			<input class="form-control" name="name" ng-model="ctrl.formData.name" readonly placeholder="请填写品牌中文名" type="text" required />
+	  			</div>
 	      </div>
-		 		<div class="control-group">
-	        <label class="control-label">品牌英文名：</label>
-	        <div class="controls">
-			  		<input class="input-xlarge" name="enName" ng-model="ctrl.formData.enName" readonly type="text"/>
-	        </div>
+			  <div class="form-group">
+	        <label class="col-sm-2 control-label">品牌英文名：</label>
+	        <div class="col-sm-5">
+			  		<input class="form-control" name="enName" ng-model="ctrl.formData.enName"  readonly placeholder="品牌英文名" type="text"/>
+	  			</div>
 	      </div>
-	      <div class="control-group">
-	        <label class="control-label"><span class="colorg">＊</span>品牌LOGO：</label>
-	        <div class="controls" style="width:72px;height:72px;line-height:72px;display:inline-block;">
-						<img ng-src="{{ctrl.formData.file}}" alt="">
-	        </div>
+	      <div class="form-group" ng-class="{'valid-success': pinpaiForm.file.$valid, 'valid-error': pinpaiForm.file.$invalid && pinpaiForm.file.$dirty}">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌LOGO：</label>
+	          <div class="col-sm-5">
+	          	<div class="controls" style="width:72px;height:72px;line-height:72px;display:inline-block;">
+								<img ng-src="{{ctrl.formData.file}}" alt="" style="max-width:100%;">
+			        </div>
+		  			</div>
+      	</div>
+		  	<div class="form-group">
+	        <label class="col-sm-2 control-label">品牌联系人：</label>
+          <div class="col-sm-5">
+         	 <input class="form-control" name="username" ng-model="ctrl.formData.username" readonly placeholder="品牌联系人" type="text"/>
+	  			</div>
 	      </div>
-		    <div class="control-group">
-	        <label class="control-label">品牌联系人：</label>
-	        <div class="controls">
-	          <input class="input-xlarge" ng-model="ctrl.formData.username" name="username" readonly type="text"/>
-	        </div>
+	      <div class="form-group">
+	        <label class="col-sm-2 control-label">联系电话：</label>
+	        <div class="col-sm-5">
+          	<input class="form-control" name="phone" ng-model="ctrl.formData.phone" readonly placeholder="联系电话" type="tel"/>
+	  			</div>
 	      </div>
-	      <div class="control-group">
-	        <label class="control-label">联系电话：</label>
-	        <div class="controls">
-	          <input class="input-xlarge" name="phone" ng-model="ctrl.formData.phone" readonly type="text"/>
-	        </div>
-	      </div>
-		    <div class="control-group">
-	        <label class="control-label">品牌故事：</label>
-	        <div class="controls">
-			  		<textarea rows="5" class="input-block-level" ng-model="ctrl.formData.discription" readonly style="width:550px"></textarea>
-	        </div>
+		 		<div class="form-group">
+	        <label class="col-sm-2 control-label">品牌故事：</label>
+	        <div class="col-sm-5">
+		  			<textarea rows="5" class="form-control" ng-model="ctrl.formData.discription" readonly placeholder="请输入品牌故事" style="width:550px"></textarea>
+	  			</div>
 	      </div>
 	      <div class="form-actions tac">
-	          <button type="button" class="sui-btn w130 btn-green" ng-click="ctrl.$state.go('^')">确定</button>
+	          <!-- <button type="button" class="sui-btn w130 btn-green" ng-click="ctrl.addMendian()" ng-disabled="pinpaiForm.$invalid">确定</button> -->
+	          <button type="button" class="btn btn-primary btn-lg" ng-click="ctrl.$state.go('^')">确定</button>
 	      </div>
 	    </form>
 	</div>

@@ -1,4 +1,4 @@
-
+<!-- 
 <div ng-controller="pinpaiEditCtrl as ctrl">
 	<h3 class="menu-title">编辑品牌</h3>
 	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">品牌列表</a><span>></span><a href="">编辑品牌</a></div>
@@ -44,8 +44,60 @@
 	        </div>
 	      </div>
 	      <div class="form-actions tac">
-	          <!-- <button type="button" class="sui-btn w130 btn-green" ng-click="ctrl.addMendian()" ng-disabled="pinpaiForm.$invalid">确定</button> -->
 	          <button type="button" class="sui-btn w130 btn-green" ng-click="ctrl.editMendian()">确定</button>
+	      </div>
+	    </form>
+	</div>
+</div> -->
+
+
+<div ng-controller="pinpaiEditCtrl as ctrl">
+	<h3 class="menu-title">编辑品牌</h3>
+	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">品牌列表</a><span>></span><a href="">编辑品牌</a></div>
+   	<div class="content">
+	    <form class="form-horizontal" name="pinpaiForm">
+	      <div class="form-group" ng-class="{'valid-success': pinpaiForm.name.$valid, 'valid-error': pinpaiForm.name.$invalid && pinpaiForm.name.$dirty}">
+	        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌中文名：</label>
+	        <div class="col-sm-5">
+		  			<input class="form-control" name="name" ng-model="ctrl.formData.name" placeholder="请填写品牌中文名" type="text" required />
+	  			</div>
+	      </div>
+			  <div class="form-group">
+	        <label class="col-sm-2 control-label">品牌英文名：</label>
+	        <div class="col-sm-5">
+			  		<input class="form-control" name="enName" ng-model="ctrl.formData.enName" placeholder="品牌英文名" type="text"/>
+	  			</div>
+	      </div>
+	      <div class="form-group" ng-class="{'valid-success': pinpaiForm.file.$valid, 'valid-error': pinpaiForm.file.$invalid && pinpaiForm.file.$dirty}">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌LOGO：</label>
+	          <div class="col-sm-5">
+							<a href="javascript:;" class="a-upload">
+								<input type="file" name="file" id="" required ng-model="ctrl.formData.file">
+							</a>
+							<span class="mr10">尺寸：大于600*600px</span>大小：100kb以内
+		  			</div>
+      	</div>
+		  	<div class="form-group">
+	        <label class="col-sm-2 control-label">品牌联系人：</label>
+          <div class="col-sm-5">
+         	 <input class="form-control" name="username" ng-model="ctrl.formData.username" placeholder="品牌联系人" type="text"/>
+	  			</div>
+	      </div>
+	      <div class="form-group">
+	        <label class="col-sm-2 control-label">联系电话：</label>
+	        <div class="col-sm-5">
+          	<input class="form-control" name="phone" ng-model="ctrl.formData.phone" placeholder="联系电话" type="tel"/>
+	  			</div>
+	      </div>
+		 		<div class="form-group">
+	        <label class="col-sm-2 control-label">品牌故事：</label>
+	        <div class="col-sm-5">
+		  			<textarea rows="5" class="form-control" ng-model="ctrl.formData.discription" placeholder="请输入品牌故事" style="width:550px"></textarea>
+	  			</div>
+	      </div>
+	      <div class="form-actions tac">
+	          <!-- <button type="button" class="sui-btn w130 btn-green" ng-click="ctrl.addMendian()" ng-disabled="pinpaiForm.$invalid">确定</button> -->
+	          <button type="button" class="btn btn-primary btn-lg" ng-click="ctrl.editMendian()">确定</button>
 	      </div>
 	    </form>
 	</div>

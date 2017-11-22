@@ -1,0 +1,99 @@
+<div ng-controller="mendianAddCtrl as ctrl">
+	<h3 class="menu-title">添加门店</h3>
+	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">添加门店</a></div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li ng-class="{'active': ctrl.switchPannel=='1'}"><a href="javascript:;" ng-click="ctrl.switchPannel='1'">门店信息</a></li>
+    <li ng-class="{'active': ctrl.switchPannel=='2'}"><a href="javascript:;" ng-click="ctrl.switchPannel='2'">地图定位</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane" ng-class="{'active': ctrl.switchPannel=='1'}">
+	    <form class="form-horizontal">
+	      <div class="form-group">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌名称：</label>
+		        <div class="col-sm-5">
+		        	<select class="form-control" ng-model="ctrl.formData.ppName" ng-options="o.id as o.name for o in ctrl.ppNameList" ng-init="ppName=1"></select>
+		        </div>
+	      </div>
+		  	<div class="form-group">
+	        <label class="col-sm-2 control-label"><span class="colorg">＊</span>门店名称：</label>
+	        <div class="col-sm-5">
+			  		<input class="form-control" name="name" ng-model="ctrl.formData.name" placeholder="请填写门店名称" required type="text"/>
+	        </div>
+	      </div>
+			  <div class="form-group">
+	        <label class="col-sm-2 control-label"><span class="colorg">＊</span>门店类型：</label>
+	        <div class="col-sm-5">
+	        	<select class="form-control" ng-model="ctrl.formData.type" ng-options="o.id as o.name for o in ctrl.caipinType" ng-init="type=1"></select>
+	        </div>
+		      </div>
+			  	<div class="form-group">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>联系电话：</label>
+		        <div class="col-sm-5">
+				  		<input class="form-control" placeholder="请输入联系电话" name="phone" ng-model="ctrl.formData.phone" data-empty-msg="请输入联系电话" type="tel">
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>时间选择：</label>
+		        <div class="col-sm-5">
+		        	<div class="col-sm-3">
+			          <input class="form-control" value="09:00" data-toggle="timepicker" type="text"> 
+			        </div>
+			        <div class="col-sm-1">-</div>
+			        <div class="col-sm-3">
+			          <input class="form-control col-sm-3" value="22:00" data-toggle="timepicker" type="text">
+		        	</div>
+		        </div>
+		      </div>
+			    <div class="form-group">
+		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>门面实景：</label>
+		        <div class="col-sm-5">
+							<a href="javascript:;" class="a-upload">
+								<input type="file" name="" id="">
+							</a>
+							<span class="mr10">尺寸：大于100*100px</span>大小：100kb以内
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <label class="col-sm-2 control-label">备注：</label>
+		        <div class="col-sm-5">
+		          <textarea rows="5" class="form-control" style="width:350px" ng-model="ctrl.formData.desctiption"></textarea>
+		        </div>
+		      </div>
+			    <div class="form-group">
+						<label class="col-sm-2 control-label">门店状态：</label>
+		        <div class="col-sm-5">
+		          <label class="radio-inline" ng-class="{'checked':ctrl.formData.status}">
+		            <input ng-value="true" ng-model="ctrl.formData.status" name="status" type="radio"><span>正常营业</span>
+		          </label>
+		          <label class="radio-inline"  ng-class="{'checked':!ctrl.formData.status}">
+		            <input ng-value="false" ng-model="ctrl.formData.status" name="status" type="radio"><span>暂停营业</span>
+		          </label>
+		        </div>
+		      </div>
+	    </form>
+    </div>
+    <div class="tab-pane" ng-class="{'active': ctrl.switchPannel=='2'}">
+			<form class="form-city sui-form form-horizontal sui-validate font14">
+				<div class="control-group">
+					<label class="control-label"><span class="colorg">＊</span>门店地址：</label>
+					<select class="select" name="province" id="s1">
+						<option></option>
+					</select>
+					<select class="select" name="city" id="s2">
+						<option></option>
+					</select>
+					<select class="select" name="town" id="s3">
+						<option></option>
+					</select>
+					<input class="input-xlarge" name="name" placeholder="具体位置（不需要重复填写省市区）" type="text"/>
+					<input id="address" name="address" type="hidden" value="" />
+					<a onclick="alert(document.getElementById('address').value); return false;" href="javascript:void(0)" type="submit" class="sui-btn w100 ml10 btn-green" >确定</a>
+				</div>
+			</form>
+			<div class="" style="border:1px solid red; width:871px;height:300px;"></div>
+    </div>
+    <div class="form-actions text-center">
+      <button type="submit" class="btn btn-primary">保存</button>
+    </div>
+  </div>
+</div>

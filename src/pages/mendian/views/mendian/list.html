@@ -2,28 +2,19 @@
 		<h3 class="menu-title">门店列表</h3>
 		<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">门店列表</a></div>
 		<div class="content">
-			<form class="sui-form form-horizontal sui-validate font14">
-				<div class="control-group">
-					<label class="control-label control-label2">门店名称：</label>
-					<div class="controls mr30">
-						<input class="input-large" id="autocomplete-ajax" autocomplete="off" type="text" placeholder="请输入要搜索的店名">
-					</div>
-					<label class="control-label ml30">门店状态：</label>
-					<div class="controls mr40">
-						<span class="sui-dropdown sui-dropdown2 dropdown-bordered select"><span class="dropdown-inner"><a role="button" data-toggle="dropdown" href="#" class="dropdown-toggle">
-            <input value="bj" name="city" data-rules="required" type="hidden"><i class="caret"></i><span>北京</span></a>
-            <ul id="menu4" role="menu" aria-labelledby="drop4" class="sui-dropdown-menu">
-                <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="bj">北京</a></li>
-                 <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="sb">圣彼得堡</a></li>
-                 <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="sb">圣彼得堡</a></li>
-                 <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" value="sb">圣彼得堡</a></li>
-             </ul></span></span>
-					</div>
-					<a href="javascript:void(0);" class="sui-btn w100 btn-green ml40">查询</a>
-					<a ui-sref="main.pinpai.add" class="ml40 sui-btn w130 btn-green">添加门店</a>
+			<form class="form-inline">
+				<div class="form-group">
+					<label>门店名称：</label>
+					<input class="form-control" id="autocomplete-ajax" autocomplete="off" type="text" placeholder="请输入要搜索的店名">
 				</div>
+				<div class="form-group">
+					<label>门店状态：</label>
+					<select name="" id="" class="form-control"></select>
+				</div>
+				<a href="javascript:void(0);" class="btn btn-warning" ng-click="ctrl.search(query)">查询</a>
+				<a ui-sref="main.mendian.add" class="btn btn-primary">添加门店</a>
 			</form>
-			<table class="sui-table table-zebra tb">
+			<table class="table table-hover">
 				<tr>
 					<th width="30%">门店名称</th>
 					<th width="15%">门店电话</th>
@@ -34,54 +25,16 @@
 				<tr ng-repeat="(index,item) in ctrl.tableList">
 					<td>{{item.name}}</td>
 					<td>{{item.phone}}</td>
-					<td>{{item.type}}</td>
-					<td>{{item.status}}</td>
-					<td class="btn-link-group">
-						<a href="#" class="btn-edit"><span class="dc-icon dc-icon-edit"></span><br>编辑</a>
-						<a href="javascript:void(0)" class="btn-delete"><span class="dc-icon dc-icon-remove"></span><br>删除</a>
-						<a href="javascript:void(0)" class="btn-stop"><span class="dc-icon dc-icon-forbidden"></span><br>暂停营业</a>
-						<a href="#" class="btn-detail"><span class="dc-icon dc-icon-profile"></span><br>详情</a>
+					<td>{{item.type | mendianTypeFilter}}</td>
+					<td>{{item.status | mendianStatusFilter}}</td>
+					<td>
+						<a href="javascript:void(0)" class="btn btn-default">编辑</a>
+						<a href="javascript:void(0)" class="btn btn-default">暂停营业</a>
+						<a href="javascript:void(0)" class="btn btn-default">详情</a>
+						<a href="javascript:void(0)" class="btn btn-danger">删除</a>
 					</td>
 				</tr>
-				<!-- <tr>
-					<td><a href="">东方极白（东方既白高科店）</a></td>
-					<td>021-44443333</td>
-					<td>小吃快餐</td>
-					<td>正常营业</td>
-					<td class="btn-link-group">
-						<a href="#" class="btn-edit"><span class="dc-icon dc-icon-edit"></span><br>编辑</a>
-						<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-keyboard="false" class="btn-delete"><span class="dc-icon dc-icon-remove"></span><br>删除</a>
-						<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal2" data-keyboard="false" class="btn-stop"><span class="dc-icon dc-icon-forbidden"></span><br>暂停营业</a>
-						<a href="#" class="btn-detail"><span class="dc-icon dc-icon-profile"></span><br>详情</a>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="">东方极白（东方既白高科店）</a></td>
-					<td>021-44443333</td>
-					<td>小吃快餐</td>
-					<td>正常营业</td>
-					<td class="btn-link-group">
-						<a href="#" class="btn-edit"><span class="dc-icon dc-icon-edit"></span><br>编辑</a>
-						<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-keyboard="false" class="btn-delete"><span class="dc-icon dc-icon-remove"></span><br>删除</a>
-						<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal2" data-keyboard="false" class="btn-stop"><span class="dc-icon dc-icon-forbidden"></span><br>暂停营业</a>
-						<a href="#" class="btn-detail"><span class="dc-icon dc-icon-profile"></span><br>详情</a>
-					</td>
-				</tr>
-				 -->
 			</table>
-			<div class="sui-pagination pagination-large">
-				<ul>
-					<li class="prev disabled"><a href="#">«上一页</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="dotted"><span>...</span></li>
-					<li class="next"><a href="#">下一页»</a></li>
-				</ul>
-				<div><span>共10页&nbsp;</span><span>到<input class="page-num" type="text"><button class="page-confirm" onclick="alert(1)">确定</button>页</span></div>
-			</div>
 	</div>
 </div>
 <!--确定删除-->

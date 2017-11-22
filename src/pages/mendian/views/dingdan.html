@@ -2,24 +2,20 @@
 	<h3 class="menu-title">订单列表</h3>
 	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">订单列表</a></div>
 	<div class="content">
-		<form class="sui-form form-horizontal sui-validate font14">
-				<div class="control-group">
-					<div class="controls mr30">
-						<label class="control-label">订单编号：</label>
-						<div class="controls mr40">
-							<input class="input-large" ng-model="id" type="text" placeholder="请输入要搜索的订单编号">
-						</div>
-					</div>
-					<label class="control-label ml30">订单类型：</label>
-					<div class="controls mr40">
-						<select class="sui-dropdown sui-dropdown2 dropdown-bordered select" ng-model="status" ng-init="status='1'" ng-options="status.id as status.name for status in ctrl.orderType">
-							<!-- <option value="">请选择</option> -->
-						</select>
-					</div>
-					<a href="javascript:void(0);" class="sui-btn w100 btn-green ml40" ng-click="ctrl.query(id, status)">查询</a>
-				</div>
+		<form class="form-inline">
+			<div class="form-group">
+				<label>订单编号：</label>
+				<input class="form-control" ng-model="id" type="text" placeholder="请输入要搜索的订单编号">
+			</div>
+			<div class="form-group">
+				<label>订单类型：</label>
+				<select class="form-control" ng-model="status" ng-init="status='1'" ng-options="status.id as status.name for status in ctrl.orderType">
+					<!-- <option value="">请选择</option> -->
+				</select>
+			</div>
+			<a href="javascript:void(0);" class="btn btn-warning" ng-click="ctrl.query(id, status)">查询</a>
 		</form>
-		<table class="sui-table table-zebra tb">
+		<table class="table table-hover table-responsive">
 			<tr>
 				<th width="15%">订单编号</th>
 				<th width="20%">下单门店</th>
@@ -41,18 +37,5 @@
 				<td>{{item.paidMoney}}</td>
 			</tr>
 		</table>
-		<div class="sui-pagination pagination-large">
-			<ul>
-				<li class="prev disabled"><a href="#">«上一页</a></li>
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li class="dotted"><span>...</span></li>
-				<li class="next"><a href="#">下一页»</a></li>
-			</ul>
-			<div><span>共10页&nbsp;</span><span>到<input class="page-num" type="text"><button class="page-confirm" onclick="alert(1)">确定</button>页</span></div>
-		</div>
 	</div>
 </div>

@@ -2,17 +2,15 @@
 	<h3 class="menu-title">品牌列表</h3>
 	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">品牌列表</a></div>
 	<div class="content">
-		<form class="sui-form form-horizontal sui-validate font14">
-				<div class="control-group">
-					<label class="control-label control-label2">品牌名称：</label>
-					<div class="controls mr30">
-						<input class="input-large" ng-model="query" autocomplete="off" type="text" placeholder="请输入要搜索的品牌">
-					</div>
-					<a href="javascript:void(0);" class="sui-btn w100 btn-green ml40" ng-click="ctrl.search(query)">查询</a>
-					<a ui-sref="main.pinpai.add" class="ml40 sui-btn w130 btn-green">添加品牌</a>
-				</div>
+		<form class="form-inline">
+			<div class="form-group">
+				<label>品牌名称：</label>
+				<input class="form-control" ng-model="query" autocomplete="off" type="text" placeholder="请输入要搜索的品牌">
+			</div>
+			<a href="javascript:void(0);" class="btn btn-warning" ng-click="ctrl.search(query)">查询</a>
+			<a ui-sref="main.pinpai.add" class="btn btn-primary">添加品牌</a>
 		</form>
-		<table class="sui-table table-zebra tb">
+		<table class="table table-hover table-responsive">
 			<tr>
 				<th width="30%">品牌名称</th>
 				<th width="15%">联系人</th>
@@ -23,27 +21,14 @@
 				<td>{{item.name}}</td>
 				<td>{{item.username}}</td>
 				<td>{{item.phone}}</td>
-				<td class="btn-link-group">
-					<a href="#" class="btn-edit">旗下门店</a>
-					<a href="javascript:;" ng-click="ctrl.edit(index)" class="btn-edit">编辑</a>
-					<a href="javascript:void(0)" ng-click="ctrl.delete(index)" class="btn-delete">删除</a>
-					<a href="javascript:;" ng-click="ctrl.detail(index)" class="btn-detail">详情</a>
+				<td>
+					<a href="#" class="btn btn-default">旗下门店</a>
+					<a href="javascript:;" ng-click="ctrl.edit(index)" class="btn btn-info">编辑</a>
+					<a href="javascript:;" ng-click="ctrl.detail(index)" class="btn btn-info">详情</a>
+					<a href="javascript:void(0)" ng-click="ctrl.delete(index)" class="btn btn-danger">删除</a>
 				</td>
 			</tr>
 		</table>
-		<div class="sui-pagination pagination-large">
-			<ul>
-				<li class="prev disabled"><a href="#">«上一页</a></li>
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li class="dotted"><span>...</span></li>
-				<li class="next"><a href="#">下一页»</a></li>
-			</ul>
-			<div><span>共10页&nbsp;</span><span>到<input class="page-num" type="text"><button class="page-confirm" onclick="alert(1)">确定</button>页</span></div>
-		</div>
 	</div>
 </div>
 
@@ -52,8 +37,8 @@
 	<div class="dialog">
 	    <div class="delete-box tac">
 			<p class="col666">确定删除该门店吗？</p>
-			<a href="javascript:void(0);" ng-click="confirm()" class="sui-btn w100 btn-green mr15">确定</a>
-			<a href="javascript:void(0);" ng-click="cancel()" class="sui-btn w100 btn-gray">取消</a>
+			<a href="javascript:void(0);" ng-click="confirm()" class="btn btn-primary">确定</a>
+			<a href="javascript:void(0);" ng-click="cancel()" class="btn btn-default">取消</a>
 		</div>
 	</div>
 </script>

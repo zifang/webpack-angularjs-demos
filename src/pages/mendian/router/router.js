@@ -188,6 +188,31 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
+  .state('main.mendian.add',{
+    url: '/mendianAdd',
+    views: {
+      "content@main": {
+        template: require('../views/mendian/mendianAdd.html')
+      }
+    },
+    resolve: {
+      loadController: [
+        '$q',
+        '$ocLazyLoad',
+        ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('../controller/mendianAdd.js');
+              $ocLazyLoad.load({
+                name: module.default
+              });
+              resolve();
+            });
+          });
+        }
+      ]
+    }
+  })
 }
 
 mendianRouter.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider'];
