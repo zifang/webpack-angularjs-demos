@@ -58,16 +58,16 @@ class mendianAddCtrl {
         //   timeout: 1000000,
         //   tapToDismiss: false
         // });
-        let url = '/api/apk/upload';
-        _that.Upload.upload({
-          url: url,
-          data: {
-            file: file
-          }
-        }).then((response) => {
-          _that.params.fileId = response.data.data.id;
-          _that.toaster.clear(toastInstance);
-        });
+        // let url = '/api/apk/upload';
+        // _that.Upload.upload({
+        //   url: url,
+        //   data: {
+        //     file: file
+        //   }
+        // }).then((response) => {
+        //   _that.params.fileId = response.data.data.id;
+        //   _that.toaster.clear(toastInstance);
+        // });
 	      // } else {
 	      //   _that.toaster.pop({
 	      //     type: 'warning',
@@ -79,7 +79,7 @@ class mendianAddCtrl {
 	    }
 	  }
 
-		let map= new AMap.Map(document.getElementById('mapContainer'), {
+		let map= new AMap.Map('mapContainer', {
 	    resizeEnable: true
 		});
 	}
