@@ -7,7 +7,7 @@ module.exports = {
     app: './src/main.js'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin("static/css/[name].[hash].css")
   ],
   output: {

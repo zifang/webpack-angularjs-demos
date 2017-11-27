@@ -4,10 +4,10 @@
 			<h3>登录</h3>
 			<!-- <span class="warning" ng-show="loginForm.$invalid">您输入的帐号或者密码不正确，请重新输入。</span> -->
 			<ul class="login-ul">
-				<label><li><i class="icon1"></i><input type="number" class="number" required ng-model="phone" placeholder="请输入你的手机号" /></li></label>
-				<label><li><i class="icon2"></i><input type="password" class="password" required ng-model="password" placeholder="请输入密码"/></li></label>
-				<label class="clearfix"><div class="pull-right"><input type="checkbox" value="action" ng-model="remember" name="genre"><label for="check-1" class="">记住密码</div></label>
-				<li><button type="submit" class="sui-btn btn-green">登录</button></li>
+				<li><i class="icon1"></i><input type="number" class="number form-control" required ng-model="phone" placeholder="请输入你的手机号" /></li>
+				<li><i class="icon2"></i><input type="password" class="password form-control" required ng-model="password" placeholder="请输入密码"/></li>
+				<div class="pull-right"><label class="clearfix"><input type="checkbox" value="action" ng-model="remember" name="genre"><label for="check-1" class="">记住密码</label></div>
+				<li><button type="submit" class="btn btn-primary btn-block">登录</button></li>
 			</ul>
 		</form>
 	</div>

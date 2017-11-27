@@ -42,14 +42,27 @@ class mendianAddCtrl {
 			name: '',
 			type: '',
 			phone: '',
+			starttime: '',
+			endtime: '',
 			desctiption: '',
 			status: true
 		}
 
+		this.formData.starttime = new Date();
+		this.formData.endtime = new Date();
+
+	  this.hstep = 1;
+	  this.mstep = 15;
+
+	  this.options = {
+	    hstep: [1, 2, 3],
+	    mstep: [1, 5, 10, 15, 25, 30]
+	  };
+
 		//上传文件
-	  uploadFiles(file, errFiles) {
-	    const _that = this;
-	    if (file) {
+	  // uploadFiles(file, errFiles) {
+	  //   const _that = this;
+	  //   if (file) {
 	      // let isApk = file.name.endsWith('.apk');
 	      // if (isApk) {
         // var toastInstance = _that.toaster.pop({
@@ -76,13 +89,32 @@ class mendianAddCtrl {
 	      //     tapToDismiss: false
 	      //   });
 	      // }
-	    }
-	  }
+	  //   }
+	  // }
 
 		let map= new AMap.Map('mapContainer', {
 	    resizeEnable: true
-		});
+		})
+
+		map.setCity('上海市');
+		 //设置城市
+    AMap.event.addDomListener(document.getElementById('query'), 'click', function() {
+        var cityName = document.getElementById('addressText').value;
+        if (!cityName) {
+            cityName = '上海市'
+        }
+        map.setCity(cityName);
+    })
+
 	}
+
+	changed() {
+    console.log('Time changed to: ' + this.formData.starttime+ '/' + this.formData.endtime);
+  }
+
+  save() {
+  	console.log(this.formData)
+  }
 }
 
 

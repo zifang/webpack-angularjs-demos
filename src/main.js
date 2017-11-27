@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import uiBootatrap from 'angular-ui-bootstrap';
+import 'angular-ui-bootstrap';
 import router from './router/router.js';
 import mendianRouter from './pages/mendian/router/router.js';
 import controller from './js/controllers/controller.js';
@@ -19,13 +19,10 @@ import '../node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.t
 import '../node_modules/ng-dialog/css/ngDialog.min.css';
 import '../node_modules/ng-dialog/css/ngDialog-theme-default.min.css';
 
-// console.log("sui")
-// console.log(sui)
-// console.log('end sui')
 import './style/iconfont.less';
 import './style/work.less';
 
-const injectArr = [uiRouter, uiBootatrap, controller, 'ngFileUpload', 'ngDialog', 'oc.lazyLoad', 'ui.bootstrap.datetimepicker']
+const injectArr = [uiRouter, 'ui.bootstrap', controller, 'ngFileUpload', 'ngDialog', 'oc.lazyLoad', 'ui.bootstrap.datetimepicker']
 const app = angular.module('app', injectArr)
 .filter('statusFilter', () => {
   return statusFilter.status;

@@ -11,7 +11,7 @@
 	      <div class="form-group">
 		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>品牌名称：</label>
 		        <div class="col-sm-5">
-		        	<select class="form-control" ng-model="ctrl.formData.ppName" ng-options="o.id as o.name for o in ctrl.ppNameList" ng-init="ppName=1"></select>
+		        	<select class="form-control" ng-model="ctrl.formData.ppName" ng-options="o.id as o.name for o in ctrl.ppNameList" ng-init="ctrl.formData.ppName=1"></select>
 		        </div>
 	      </div>
 		  	<div class="form-group">
@@ -23,7 +23,7 @@
 			  <div class="form-group">
 	        <label class="col-sm-2 control-label"><span class="colorg">＊</span>门店类型：</label>
 	        <div class="col-sm-5">
-	        	<select class="form-control" ng-model="ctrl.formData.type" ng-options="o.id as o.name for o in ctrl.caipinType" ng-init="type=1"></select>
+	        	<select class="form-control" ng-model="ctrl.formData.type" ng-options="o.id as o.name for o in ctrl.caipinType" ng-init="ctrl.formData.type=1"></select>
 	        </div>
 		      </div>
 			  	<div class="form-group">
@@ -36,11 +36,14 @@
 		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>时间选择：</label>
 		        <div class="col-sm-5">
 		        	<div class="col-sm-3">
-			          <input class="form-control" value="09:00" data-toggle="timepicker" type="text"> 
+		        		<div uib-timepicker ng-model="starttime" ng-change="ctrl.changed()" hour-step="1" minute-step="5" show-meridian="false"></div>
+			          <!-- <input class="form-control" value="09:00" data-toggle="timepicker" type="text">  -->
 			        </div>
+			        <!-- aa{{ctrl.starttime | date:'shortTime' }} -->
 			        <div class="col-sm-1">-</div>
 			        <div class="col-sm-3">
-			          <input class="form-control col-sm-3" value="22:00" data-toggle="timepicker" type="text">
+			        	<div uib-timepicker ng-model="endtime" ng-change="ctrl.changed()" hour-step="1" minute-step="5"></div>
+			          <!-- <input class="form-control col-sm-3" value="22:00" data-toggle="timepicker" type="text"> -->
 		        	</div>
 		        </div>
 		      </div>
@@ -95,16 +98,16 @@
 						</select>
 					</div>
 					<div class="col-sm-2">
-						<input class="form-control" name="name" placeholder="具体位置（不需要重复填写省市区）" type="text"/>
+						<input class="form-control" id="addressText"  name="name" placeholder="具体位置（不需要重复填写省市区）" type="text"/>
 						<input id="address" name="address" type="hidden" value="" />
 					</div>
-					<a onclick="alert(document.getElementById('address').value); return false;" href="javascript:void(0)" type="submit" class="btn btn-default" >确定</a>
+					<a id="query" href="javascript:void(0)" class="btn btn-default" >确定</a>
 				</div>
-				<div class="" style="border:1px solid #ddd; width:871px;height:300px;margin-top:15px;" id="mapContainer"></div>
+				<div class="" style="border:1px solid #ddd; width:871px;height:400px;margin-top:15px;" id="mapContainer"></div>
 			</form>
     </div>
     <div class="form-actions text-center">
-      <button type="submit" class="btn btn-primary">保存</button>
+      <button type="button" ng-click="ctrl.save()" class="btn btn-primary">保存</button>
     </div>
   </div>
 </div>
