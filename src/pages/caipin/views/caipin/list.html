@@ -1,0 +1,50 @@
+<div ng-controller="caipinCtrl as ctrl">
+	<h3 class="menu-title">菜品列表</h3>
+	<div class="bread"><a href="">首页</a><span>></span><a href="">菜品管理</a><span>></span><a href="">菜品列表</a></div>
+	<div class="content">
+		<form class="form-inline">
+			<div class="form-group">
+				<label>所有菜品分类</label>
+				<select name="" id="" class="form-control">
+					<option value="">--请选择--</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>菜品名称：</label>
+				<input class="form-control" autocomplete="off" type="text" placeholder="请输入要搜索的菜品名称">
+			</div>
+			<a href="javascript:void(0);" class="btn btn-warning" ng-click="ctrl.query(query)">查询</a>
+			<a ui-sref="main.caipin.add" class="btn btn-primary">添加单个菜品</a>
+		</form>
+		<table class="table table-hover">
+			<tr>
+				<th>菜品名称</th>
+				<th>菜品分类</th>
+				<th>价格</th>
+				<th>单位</th>
+				<th>状态</th>
+				<th>操作</th>
+			</tr>
+			<tr ng-repeat="(index, item) in ctrl.tableList">
+				<td>{{item.name}}</td>
+				<td>{{item.type}}</td>
+				<td>{{item.price}} 元</td>
+				<td>{{item.unit}}</td>
+				<td>{{item.status}}</td>
+				<td>
+					<!-- <a href="#" class="btn-edit">编辑</a> -->
+					<a href="javascript:void(0)" class="btn btn-defalult">详情</a>
+					<!-- <a href="javascript:void(0)" class="btn btn-danger" ng-click="ctrl.delete(index)">删除</a> -->
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<!--确定删除-->
+<!-- <div id="myModal" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal alert-modal hide">
+    <div class="delete-box tac">
+		<p class="col666">确定删除该门店吗？</p>
+		<a href="javascript:void(0);" data-ok="modal"  class="sui-btn w100 btn-green mr15">确定</a>
+		<a href="javascript:void(0);" data-dismiss="modal"  class="sui-btn w100 btn-gray">取消</a>
+	</div>
+</div> -->

@@ -1,0 +1,104 @@
+<div ng-controller="yuangongAddCtrl as ctrl">
+	<h3 class="menu-title">添加员工</h3>
+	<div class="bread"><a href="">首页</a><span>></span><a href="">门店管理</a><span>></span><a href="">员工管理</a><span>></span><a href="">添加员工</a></div>
+ 	<div class="content">
+ 		<form class="form-horizontal" name="yuangongForm">
+ 			<div class="col-sm-6">
+	      <div class="form-group" ng-class="{'valid-success': yuangongForm.id.$valid, 'valid-error': yuangongForm.id.$invalid && yuangongForm.id.$dirty}">
+	        <label class="col-sm-3 control-label"><span class="colorg">＊</span>员工工号：</label>
+	        <div class="col-sm-8">
+		  			<input class="form-control" name="id" ng-model="ctrl.formData.id" placeholder="请填写员工工号" type="text" required />
+	  			</div>
+	      </div>
+			  <div class="form-group" ng-class="{'valid-success': yuangongForm.name.$valid, 'valid-error': yuangongForm.name.$invalid && yuangongForm.name.$dirty}">
+	        <label class="col-sm-3 control-label"><span class="colorg">＊</span>员工姓名：</label>
+	        <div class="col-sm-8">
+			  		<input class="form-control" name="name" ng-model="ctrl.formData.name" placeholder="员工姓名" type="text"/>
+	  			</div>
+	      </div>
+	      <div class="form-group" ng-class="{'valid-success': yuangongForm.tel.$valid, 'valid-error': yuangongForm.tel.$invalid && yuangongForm.tel.$dirty}">
+	        <label class="col-sm-3 control-label"><span class="colorg">＊</span>手机号码：</label>
+	        <div class="col-sm-8">
+			  		<input class="form-control" name="tel" ng-model="ctrl.formData.tel" placeholder="手机号码" type="tel"/>
+	  			</div>
+	      </div> 
+	      <div class="form-group" ng-class="{'valid-success': yuangongForm.password.$valid, 'valid-error': yuangongForm.password.$invalid && yuangongForm.password.$dirty}">
+	        <label class="col-sm-3 control-label"><span class="colorg">＊</span>密码：</label>
+	        <div class="col-sm-8">
+			  		<input class="form-control" name="password" ng-model="ctrl.formData.password" placeholder="密码" type="password"/>
+	  			</div>
+	      </div> 
+        <div class="form-group" ng-class="{'valid-success': yuangongForm.position.$valid, 'valid-error': yuangongForm.position.$invalid && yuangongForm.position.$dirty}">
+	        <label class="col-sm-3 control-label"><span class="colorg">＊</span>员工角色：</label>
+	        <div class="col-sm-8">
+	        	<select name="" id="" class="form-control" ng-model="ctrl.formData.position">
+	        		<option value="">请选择角色</option>
+					    <option value="店长">店长</option>
+					    <option value="服务员">服务员</option>
+	        	</select>
+	  			</div>
+	      </div>
+      </div>
+      <div class="col-sm-6">
+      	<div class="col-sm-12" style="margin-bottom:10px;">
+	      	<label class="control-label"><span class="colorg">＊</span>分配管理店铺</label>
+	      	<span class="text-gray">（店长及服务员角色均只能对应一家门店！）</span>
+	      </div>
+	      <div class="col-sm-12">
+	      	<div class="form-group">
+	      		<div class="col-sm-12">
+	      				<select class="form-control" name="">
+		  						<option value="">肯德基</option>
+		  						<option value="">肯德基1</option>
+		  					</select>
+		  					<select class="select mt10" name="province" id="s1">
+		  						<option></option>
+		  					</select>
+		  					<select class="select mt10" name="city" id="s2">
+		  						<option></option>
+		  					</select>
+		  					<select class="select mt10" name="town" id="s3">
+		  						<option></option>
+		  					</select>
+		  					<input id="address" name="address" type="hidden" value="" />
+	      		</div>
+	      	</div>
+	      </div>
+      	<ul class="search-result-list border-t" ng-show="false">
+					<li>
+						<label data-toggle="checkbox" class="checkbox-pretty inline">
+						  <input type="checkbox"><span>东方既白（浦东一店）</span>
+						</label>
+					</li>
+					<li>
+						<label data-toggle="checkbox" class="checkbox-pretty inline">
+						  <input type="checkbox"><span>东方既白（浦东345店）</span>
+						</label>
+					</li>
+					<li>
+						<label data-toggle="checkbox" class="checkbox-pretty inline">
+						  <input type="checkbox"><span>东方既白（浦东张江高科旗舰店）</span>
+						</label>
+					</li>
+					<li>
+						<label data-toggle="checkbox" class="checkbox-pretty inline">
+						  <input type="checkbox"><span>东方既白（浦东徐汇美罗城2店）</span>
+						</label>
+					</li>
+				</ul>
+      </div>
+      <div class="form-actions tac">
+        <button type="button" class="btn btn-primary btn-lg" ng-click="ctrl.save()">确定</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--提示信息-->
+<div id="alertInfo" tabindex="-1" role="dialog" data-backdrop="static" class="sui-modal alert-modal hide">
+    <div class="delete-box tac">
+		<p class="col666">店长及服务员角色均只能对应一家门店！</p>
+		<a href="javascript:void(0);" data-ok="modal"  class="sui-btn w100 btn-green mr15">确定</a>
+		<a href="javascript:void(0);" data-dismiss="modal"  class="sui-btn w100 btn-gray">取消</a>
+	</div>
+</div>

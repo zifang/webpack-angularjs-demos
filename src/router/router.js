@@ -20,14 +20,6 @@ const router = function($urlRouterProvider, $stateProvider, $locationProvider){
       }
     },
   })
-  .state('main.caipin',{
-    url:'/caipin',
-    views: {
-      "content@main": {
-        template: require('../pages/caipin/main.html')
-      }
-    }
-  })
 }
 
 router.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider'];

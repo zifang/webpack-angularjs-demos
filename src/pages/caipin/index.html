@@ -1,0 +1,10 @@
+<div ng-controller="caipinCtrl as ctrl">
+	<div class="bread mt30"><a href="">首页</a><span>></span><a href="">菜品管理</a></div>
+	<div class="content">
+		<ul class="list-card clearfix">
+			<li ng-repeat="(index,item) in ctrl.allMenuList">
+				<a ui-sref="{{item.url}}" class="card2">{{item.name}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

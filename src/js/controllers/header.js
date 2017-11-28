@@ -11,6 +11,7 @@ export default class headerCtrl {
 				{
 					id:1,
 					title:'门店管理',
+					url: 'main.mendian',
 					list: [
 						{id:11, name: '品牌列表', checked:true, status:0},
 						{id:12, name: '门店列表',status:1},
@@ -22,6 +23,7 @@ export default class headerCtrl {
 				{
 					id:2,
 					title: '菜品管理',
+					url: 'main.caipin',
 					list: [
 					  {id:21, name: '菜品分类',status:0},
 						{id:22, name: '菜品列表',status:0},
@@ -31,6 +33,7 @@ export default class headerCtrl {
 				{
 					id:3,
 					title: '数据分析',
+					url: 'main.mendian',
 					list: [
 					  {id:31, name: '菜品统计',status:0},
 						{id:32, name: '营业统计',status:0}
@@ -39,6 +42,7 @@ export default class headerCtrl {
 				{
 					id:4,
 					title: '系统配置',
+					url: 'main.mendian',
 					list: [
 					  {id:41, name: '公众号设置',status:0},
 						{id:42, name: '修改密码',status:0},

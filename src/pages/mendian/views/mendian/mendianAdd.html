@@ -36,14 +36,11 @@
 		        <label class="col-sm-2 control-label"><span class="colorg">＊</span>时间选择：</label>
 		        <div class="col-sm-5">
 		        	<div class="col-sm-3">
-		        		<div uib-timepicker ng-model="starttime" ng-change="ctrl.changed()" hour-step="1" minute-step="5" show-meridian="false"></div>
-			          <!-- <input class="form-control" value="09:00" data-toggle="timepicker" type="text">  -->
+		        		<div uib-timepicker ng-model="ctrl._starttime" ng-change="ctrl.changed()" hour-step="1" minute-step="1" show-meridian="false"></div>
 			        </div>
-			        <!-- aa{{ctrl.starttime | date:'shortTime' }} -->
 			        <div class="col-sm-1">-</div>
 			        <div class="col-sm-3">
-			        	<div uib-timepicker ng-model="endtime" ng-change="ctrl.changed()" hour-step="1" minute-step="5"></div>
-			          <!-- <input class="form-control col-sm-3" value="22:00" data-toggle="timepicker" type="text"> -->
+			        	<div uib-timepicker ng-model="ctrl._endtime" ng-change="ctrl.changed()" hour-step="1" minute-step="1" show-meridian="false"></div>
 		        	</div>
 		        </div>
 		      </div>
@@ -56,7 +53,6 @@
 								</a>
 								<span class="mr10">尺寸：大于100*100px</span>大小：100kb以内
 			        </div>
-			     	  <!-- <input type="submit" class="btn btn-primary" value="upload"> -->
 			      </div>
 			    </form>
 		      <div class="form-group">
@@ -82,7 +78,7 @@
 			<form class="form-horizontal">
 				<div class="control-group">
 					<label class="col-sm-2 control-label"><span class="colorg">＊</span>门店地址：</label>
-					<div class="col-sm-2">
+					<!-- <div class="col-sm-2">
 						<select class="form-control" name="province" id="s1">
 							<option></option>
 						</select>
@@ -96,8 +92,8 @@
 						<select class="form-control" name="town" id="s3">
 							<option></option>
 						</select>
-					</div>
-					<div class="col-sm-2">
+					</div> -->
+					<div class="col-sm-5">
 						<input class="form-control" id="addressText"  name="name" placeholder="具体位置（不需要重复填写省市区）" type="text"/>
 						<input id="address" name="address" type="hidden" value="" />
 					</div>

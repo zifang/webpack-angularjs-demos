@@ -1,6 +1,6 @@
 class mendianAddCtrl {
-	constructor($state, $http) {
-		Object.assign(this, {$state, $http});
+	constructor($state, $http, $filter) {
+		Object.assign(this, {$state, $http, $filter});
 		this.switchPannel = 1;
 
 		this.ppNameList = [
@@ -47,17 +47,8 @@ class mendianAddCtrl {
 			desctiption: '',
 			status: true
 		}
-
-		this.formData.starttime = new Date();
-		this.formData.endtime = new Date();
-
-	  this.hstep = 1;
-	  this.mstep = 15;
-
-	  this.options = {
-	    hstep: [1, 2, 3],
-	    mstep: [1, 5, 10, 15, 25, 30]
-	  };
+		this._starttime = new Date()
+		this._endtime = new Date();
 
 		//上传文件
 	  // uploadFiles(file, errFiles) {
@@ -109,16 +100,20 @@ class mendianAddCtrl {
 	}
 
 	changed() {
-    console.log('Time changed to: ' + this.formData.starttime+ '/' + this.formData.endtime);
+    this.formData.starttime = this.$filter('date')(this._starttime, 'HH:mm')
+    this.formData.endtime = this.$filter('date')(this._endtime, 'HH:mm')
   }
 
   save() {
+  	// this.formData.starttime = this._starttime;
+  	// this.formData.endtime = this._endtime;
   	console.log(this.formData)
+  	this.$state.go("main.mendian.home")
   }
 }
 
 
-mendianAddCtrl.$inject = ['$state', '$http']
+mendianAddCtrl.$inject = ['$state', '$http', '$filter']
 
 export default angular.module('mendianAddModule',[])
 	.controller('mendianAddCtrl', mendianAddCtrl)

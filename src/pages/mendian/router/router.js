@@ -213,6 +213,56 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
       ]
     }
   })
+  .state('main.yuangong',{
+    url: '/yuangong',
+    views: {
+      "content@main": {
+        template: require('../views/yuangong/list.html')
+      }
+    },
+    resolve: {
+      loadController: [
+        '$q',
+        '$ocLazyLoad',
+        ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('../controller/yuangong.js');
+              $ocLazyLoad.load({
+                name: module.default
+              });
+              resolve();
+            });
+          });
+        }
+      ]
+    }
+  })
+  .state('main.yuangong.add',{
+    url: '/yuangongAdd',
+    views: {
+      "content@main": {
+        template: require('../views/yuangong/yuangongAdd.html')
+      }
+    },
+    resolve: {
+      loadController: [
+        '$q',
+        '$ocLazyLoad',
+        ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('../controller/yuangongAdd.js');
+              $ocLazyLoad.load({
+                name: module.default
+              });
+              resolve();
+            });
+          });
+        }
+      ]
+    }
+  })
 }
 
 mendianRouter.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider'];

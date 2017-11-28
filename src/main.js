@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import 'angular-ui-bootstrap';
 import router from './router/router.js';
 import mendianRouter from './pages/mendian/router/router.js';
+import caipinRouter from './pages/caipin/router/router.js';
 import controller from './js/controllers/controller.js';
 import { statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter, mendianStatusFilter } from './js/filter/status.js';
 
@@ -53,3 +54,4 @@ const app = angular.module('app', injectArr)
 // }])
 .config(router)
 .config(mendianRouter)
+.config(caipinRouter)
