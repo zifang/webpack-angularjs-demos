@@ -1,5 +1,5 @@
 // 'use strict';
-class caipinCtrl {
+class caipinListCtrl {
 	constructor($state, $http, ngDialog){
 		Object.assign(this, {$state, $http, ngDialog})
 		this.tableList = [
@@ -30,8 +30,8 @@ class caipinCtrl {
 	}
 }
 
-caipinCtrl.$inject=['$state', '$http', 'ngDialog']
+caipinListCtrl.$inject=['$state', '$http', 'ngDialog']
 
 export default angular.module('caipinModule', [])
-  .controller('caipinCtrl', caipinCtrl)
+  .controller('caipinListCtrl', caipinListCtrl)
   .name;
