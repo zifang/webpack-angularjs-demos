@@ -1,14 +1,9 @@
 // 'use strict';
 class mendianCtrl {
-	constructor($state, $http, ngDialog){
-		Object.assign(this, {$state, $http, ngDialog})
-		this.tableList = [
-			{id:11, name: '东方极白（东方既白高科店）', phone: '021-12111111', type: '1', status: '1'},
-			{id:12, name: '东方极白', phone: '021-123333111', type: '2', status: '2'},
-			{id:13, name: '东方极白', phone: '021-121333211', type: '3', status: '1'},
-			{id:14, name: '东方既白高科店', phone: '021-32331111', type: '1', status: '2'},
-			{id:15, name: '东方高科店', phone: '021-1213232111', type: '1', status: '1'},
-		]
+	constructor($state, $http, ngDialog, HttpServer){
+		Object.assign(this, {$state, $http, ngDialog, HttpServer})
+		this.tableList = [];
+		this.getData();
 	}
 
 	delete(index){
@@ -44,19 +39,30 @@ class mendianCtrl {
           	_this.ngDialog.close()
           }
           $scope.confirm = function(){
-          	if(_this.tableList[index].status === '1'){
-          		_this.tableList[index].status = '2'
+          	if(_this.tableList[index].flag === 1){
+          		_this.tableList[index].flag = 2
           	}else{
-          		_this.tableList[index].status = '1'
+          		_this.tableList[index].flag = 1
           	}
           	_this.ngDialog.close()
           }
       }]
 		})
 	}
+
+	getData() {
+		this.HttpServer.http('get', '../../../json/mendian.json').then(res => {
+			if(res.code === "200"){
+				console.log(res.model)
+				this.tableList = res.model;
+			}else{
+				alert(res.message)
+			}
+		})
+	}
 }
 
-mendianCtrl.$inject=['$state', '$http', 'ngDialog']
+mendianCtrl.$inject=['$state', '$http', 'ngDialog' ,'HttpServer']
 
 export default angular.module('mendianModule', [])
   .controller('mendianCtrl', mendianCtrl)

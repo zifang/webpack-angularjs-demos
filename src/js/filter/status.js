@@ -46,9 +46,9 @@ class orderTypeFilter { // 订单类型
 class mendianTypeFilter {
   static status(input) {
     switch (input) {
-      case '1':
+      case 1:
         return '小吃快餐';
-      case '2':
+      case 2:
         return '正餐';
       default:
         return '暂无类型';
@@ -59,9 +59,9 @@ class mendianTypeFilter {
 class mendianStatusFilter {
   static status(input) {
     switch (input) {
-      case '1':
+      case 1:
         return '正常营业';
-      case '2':
+      case 2:
         return '暂停营业';
       default:
         return '暂无类型';
