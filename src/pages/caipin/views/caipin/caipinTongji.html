@@ -1,0 +1,49 @@
+ <div ng-controller="caipinTongjiCtrl as ctrl">
+	<h3 class="menu-title">菜品统计</h3>
+	<div class="bread"><a href="">首页</a><span>></span><a href="">数据分析</a><span>></span><a href="">菜品统计</a></div>
+	<div class="content">
+		<form class="form-inline clearfix">
+			<div class="btn-group pull-right">
+				  <button type="button" class="btn btn-default">日</button>
+				  <button type="button" class="btn btn-default">周</button>
+				  <button type="button" class="btn btn-default">月</button>
+			</div>
+			<div class="dropdown">
+				<span uib-dropdown on-toggle="toggled(open)">
+		      <button class="btn btn-primary" id="dropdown2" uib-dropdown-toggle>销量数量从高到低</button>
+		      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown2">
+		       <li><a href="#">销售数量从低到高</a></li>
+						<li><a href="#">销售数量从高到低</a></li>
+		      </ul>
+		    </span>
+			</div>
+	    <!-- <div class="form-group">
+		      <a href="javascript:;" id="btn-prev" class="btn-date btn-prev">&lt;</a>
+		      <input type="text" id="daydatepicker" class="form-control" placeholder="请选择日期">
+		      <input type="text" id="weekdatepicker" class="form-control" placeholder="请选择周期" style="display:none;">
+		      <input type="text" id="monthdatepicker" class="form-control" placeholder="请选择月份" style="display:none">
+		      <input type="hidden" name="" id="hid-value" value="day">
+			  <a href="javascript:;" id="btn-next" class="btn-date btn-next">&gt;</a>
+	    </div> -->
+		</form>
+		<div class="chart-box mt10">
+			<div id="mainChart" class="pull-left mb20" style="width:100%;height:380px;margin-bottom:20px;"></div>
+		</div>
+		<table class="table table-hover">
+			<tr>
+				<th>菜品名称</th>
+				<th>菜品分类</th>
+				<th>销售数量(份)</th>
+				<th>菜品单价</th>
+				<th>优惠价格</th>
+			</tr>
+			<tr>
+				<td>剁椒鱼头</td>
+				<td>鱼类</td>
+				<td>250</td>
+				<td>58.00</td>
+				<td>58.00</td>
+			</tr>
+		</table>
+	</div>
+</div>	

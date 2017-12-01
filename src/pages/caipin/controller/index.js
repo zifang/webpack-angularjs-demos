@@ -4,6 +4,7 @@ class caipinCtrl {
 		Object.assign(this, {$state, $http})
 		this.allMenuList = [
 			{id:11, name: '菜品分类', url: 'main.caipin.list'},
+			{id:14, name: '菜品统计', url: 'main.caipin.tongji'},
 			{id:12, name: '菜品列表', url: 'main.mendian.home'},
 			{id:13, name: '菜单列表', url: 'main.yuangong'}
 		]

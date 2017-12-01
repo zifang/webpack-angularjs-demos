@@ -25,8 +25,8 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
         }
       ]
     }
-  }).
-  state('main.caipin.list',{
+  })
+  .state('main.caipin.list',{
     url: '/caipinList',
     views: {
       "content@main": {
@@ -41,6 +41,31 @@ const mendianRouter = function($urlRouterProvider, $stateProvider, $locationProv
           return $q((resolve) => {
             require.ensure([], () => {
               let module = require('../controller/caipin.js');
+              $ocLazyLoad.load({
+                name: module.default
+              });
+              resolve();
+            });
+          });
+        }
+      ]
+    }
+  })
+  .state('main.caipin.tongji',{
+    url: '/caipinTongji',
+    views: {
+      "content@main": {
+        template: require('../views/caipin/caipinTongji.html')
+      }
+    },
+    resolve: {
+      loadController: [
+        '$q',
+        '$ocLazyLoad',
+        ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('../controller/caipinTongji.js');
               $ocLazyLoad.load({
                 name: module.default
               });

@@ -31,15 +31,6 @@ export default class headerCtrl {
 					]
 				},
 				{
-					id:3,
-					title: '数据分析',
-					url: 'main.mendian',
-					list: [
-					  {id:31, name: '菜品统计',status:0},
-						{id:32, name: '营业统计',status:0}
-					]
-				},
-				{
 					id:4,
 					title: '系统配置',
 					url: 'main.mendian',
