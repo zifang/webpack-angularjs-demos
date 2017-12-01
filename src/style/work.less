@@ -36,6 +36,9 @@ ul,li {
 	width: 1200px;
 	margin: 0 auto;
 }
+.tac{
+	text-align: center;
+}
 .top {
 	background: #fff;
 	.h-lh(32px);
@@ -254,9 +257,9 @@ ul,li {
 		position: absolute;
 		top: 5px;
 		right: 30px;
-		z-index: 100;
+		z-index: 10;
 		.wh(20px,20px);
-		.background(transparent, '../images/sprite.png' ,center,center);
+		.background(transparent, '/images/sprite.png' ,-21px,0);
 	}
 	.card1 {
 		.bgc(#f46b54,#ac4d3c)
@@ -320,7 +323,7 @@ ul,li {
 	top: 50%;
 	left: 50%;
 	z-index: 12;
-	.wh(10000px,600px);
+	.wh(1000px,600px);
 	.bor(@d);
 	margin-left: -500px;
 	margin-top: -300px;
@@ -694,7 +697,6 @@ ul,li {
 }
 .form-actions {
 	padding-top: 20px;
-	.bor(@d);
 }
 .form-pos {
 	.pos(absolute,inherit,0,15px,0);
