@@ -22,7 +22,7 @@
 			<ul class="menu-bar pull-left">
 				<li class="menu-bar-li"><a ui-sref="main" class="myfavorite">我的收藏</a></li>
 				<li class="menu-bar-li" ng-mouseenter="ctrl.mouseenter(index)" ng-mouseleave="ctrl.mouseleave(index)" ng-repeat="(index,item) in ctrl.allMenuList" >
-					<a ui-sref="{{item.url}}"><i class="icon icon1"></i>{{item.title}}</a>
+					<a ui-sref="{{item.url}}"><i class="icon icon{{index+1}}"></i>{{item.title}}</a>
 					<ul class="top-bar-hide top-bar-hide{{index+1}}" ng-show="ctrl.showMenu{{index}}">
 						<li ng-repeat="subitem in item.list"><a>{{subitem.name}}</a></li>
 					</ul>
@@ -30,7 +30,7 @@
 			</ul>
 			<div class="dropdown pull-right">
 				<span uib-dropdown on-toggle="toggled(open)">
-		      <input type="text" class="btn" id="dropdown2" uib-dropdown-toggle>
+		      <input type="text" class="btn" id="dropdown2" uib-dropdown-toggle value="店铺1">
 		      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown2">
 		       <li><a href="#">店铺1</a></li>
 						<li><a href="#">店铺2</a></li>

@@ -1,0 +1,61 @@
+.pos(@pos:absolute,@top:inherit,@right:inherit,@bottom:inherit,@left:inherit){
+    position: @pos;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+.wh(@width,@height){
+    width: @width;
+    height: @height;
+}
+.h-lh(@h){
+	height: @h;
+	line-height: @h;	
+}
+
+.ico(@width,@height,@pwidth,@pheight){
+	width: @width;
+	height: @height;
+	background-position: @pwidth @pheight;
+}
+.bt-active(@bgcor,@cor){
+	background: @bgcor;
+	color: @cor;
+	border: 1px solid @bgcor;
+}
+.text-overflow(){
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.bgc(@bgcor,@bghcor){
+	background: @bgcor;
+	&:hover {
+		background: @bghcor;
+	}
+}
+.bor(@cor){
+	border: 1px solid @cor;
+}
+.bor-bot(@cor){
+	border-bottom: 1px solid @cor;
+}
+.bor-left(@cor){
+	border-left: 1px solid @cor;
+}
+.background(@bgcor:transparent,@url,@w,@h){
+	background: @bgcor url(@url) no-repeat @w @h;
+}
+.bor-bt-radius(@size){
+	border-bottom-left-radius:@size;
+	border-bottom-right-radius: @size;
+}
+.bor-left-radius(@size){
+	border-top-left-radius: @size;
+	border-bottom-left-radius: @size;
+}
+.bor-right-radius(@size){
+	border-top-left-radius: @size;
+	border-bottom-left-radius: @size;
+}
