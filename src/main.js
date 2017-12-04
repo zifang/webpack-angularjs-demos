@@ -5,6 +5,7 @@ import router from './router/router.js';
 import mendianRouter from './pages/mendian/router/router.js';
 import caipinRouter from './pages/caipin/router/router.js';
 import controller from './js/controllers/controller.js';
+import Factorys from './js/common/factory.js';
 import Services from './js/common/service.js';
 import { statusFilter, payStatusFilter, orderTypeFilter, mendianTypeFilter, mendianStatusFilter } from './js/filter/status.js';
 
@@ -24,9 +25,11 @@ import '../node_modules/ng-dialog/css/ngDialog-theme-default.min.css';
 import './style/iconfont.less';
 import './style/work.less';
 
-const injectArr = [uiRouter, 'ui.bootstrap', controller, Services, 'ngFileUpload', 'ngDialog', 'oc.lazyLoad', 'ui.bootstrap.datetimepicker']
+const injectArr = [uiRouter, 'ui.bootstrap', controller, Services, Factorys,  'ngFileUpload', 'ngDialog', 'oc.lazyLoad', 'ui.bootstrap.datetimepicker']
 const app = angular.module('app', injectArr)
-
+.config(router)
+.config(mendianRouter)
+.config(caipinRouter)
 .filter('statusFilter', () => {
   return statusFilter.status;
 })
@@ -42,9 +45,6 @@ const app = angular.module('app', injectArr)
 .filter('mendianStatusFilter', () => {
 	return mendianStatusFilter.status;
 })
-.config(router)
-.config(mendianRouter)
-.config(caipinRouter)
 // .directive('itemDish',[function(){
 // 	return {
 // 		restrict: 'AE',

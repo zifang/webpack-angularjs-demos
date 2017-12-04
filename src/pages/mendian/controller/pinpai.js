@@ -1,7 +1,7 @@
 // 'use strict';
 class pinpaiCtrl {
-	constructor($state, $scope, $http, $filter, Upload, ngDialog){
-		Object.assign(this, {$state, $scope, $http, $filter ,Upload, ngDialog})
+	constructor($state, $scope, $http, $filter, Upload, ngDialog, FormServer){
+		Object.assign(this, {$state, $scope, $http, $filter ,Upload, ngDialog, FormServer})
 		if(sessionStorage.tableList){
 			this.tableList = JSON.parse(sessionStorage.tableList);
 		}else{
@@ -46,25 +46,15 @@ class pinpaiCtrl {
 	}
 
 	delete(index){
-		let _this = this;
-		this.ngDialog.open({
-			template: 'delPinpaiTempId',
-			width: 360,	
-			showClose: false,	//是否显示关闭按钮
-			closeByDocument: false, // 点击body关闭按钮
-			className: 'ngdialog-theme-default',
-		  controller: ['$scope', function ($scope, $timeout) {
-          $scope.cancel = function(){
-          	_this.ngDialog.close()
-          }
-          $scope.confirm = function(){
-          	_this.tableList.splice(index,1);
-          	_this.ngDialog.close()
-          	sessionStorage.tableList = JSON.stringify(_this.tableList);
-          }
-      }]
-		})
+		this.FormServer.delete(this, index, 'delPinpaiTempId', this.confirmCallBack);
 	}
+
+	confirmCallBack(_this, index){
+		_this.tableList.splice(index,1);
+  	_this.ngDialog.close()
+  	sessionStorage.tableList = JSON.stringify(_this.tableList);
+	}
+
 	edit(index) {
 		sessionStorage.pinpaiDetail = JSON.stringify(this.tableList[index]);
 		sessionStorage.tableIndex = index;
@@ -77,7 +67,7 @@ class pinpaiCtrl {
 	}
 }
 
-pinpaiCtrl.$inject=['$state', '$scope', '$http', '$filter', 'Upload', 'ngDialog']
+pinpaiCtrl.$inject=['$state', '$scope', '$http', '$filter', 'Upload', 'ngDialog', 'FormServer']
 
 export default angular.module('pinpaiModule', [])
   .controller('pinpaiCtrl', pinpaiCtrl)
