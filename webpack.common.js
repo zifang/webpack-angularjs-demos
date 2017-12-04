@@ -4,17 +4,20 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin= require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: ["babel-polyfill",'./src/main.js']
   },
   plugins: [
     // new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin("static/css/[name].[hash].css")
   ],
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'static/js/[name].[hash].js',
-    path: path.resolve(__dirname, 'dist')
+    chunkFilename: 'static/js/[name].[hash].js'
   },
   devServer: {
+    // outputPath: path.join(__dirname, 'dist'),
+    // contentBase: path.join(__dirname, 'dist'),
     contentBase:'src',
     historyApiFallback:true,
     hot:true,
@@ -27,8 +30,22 @@ module.exports = {
     // distoryApiFallback: true,
     inline: true,//不使用inline模式，inline模式一般用于单页面应用开发，会自动将socket注入页面代码中
     // proxy: {
-    //   //
+    //  "/api": {
+    //     target: "http://10.10.1.14"
+    //     pathRewrite: {
+    //       "^/api": ""
+    //     }
+    //   },
     // }
+  },
+  resolve: {
+    // root: './app',
+    alias: { 
+      node_modules: __dirname + '/node_modules',
+      style: __dirname + '/src/style',
+      pages: __dirname + '/src/pages',
+      common: __dirname + '/src/js/common'
+    }
   },
   module: {
     rules: [
